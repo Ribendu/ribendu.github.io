@@ -176,6 +176,7 @@
             if (score === 80) {
                 message = "¡Eres la mejor! Ganarás una sorpresa 🎁, te amo muchísimo mi amor ❤️";
                 imageUrl = "assets/img/love.gif";
+                launchConfetti();
             } else if (score >= 40) {
                 message = "Que bien mi amorcito, pero puedes ir mejor! 😁";
                 imageUrl = "assets/img/animo.gif";
@@ -189,6 +190,15 @@
             resultImage.style.display = "block";
             document.getElementById("result").style.display = "block";
         }
+
+        function launchConfetti() {
+            confetti({
+                particleCount: 200,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
     </script>
 </body>
 </html>
