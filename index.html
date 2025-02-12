@@ -105,7 +105,7 @@
               <button onclick="nextQuestion(0)">Grecia</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cual mi apodo favorito para ti?</p>
+              <p>¿Cuál mi apodo favorito para ti?</p>
               <img src="assets/img/apodo.jfif" width="200">
               <br>
               <button onclick="nextQuestion(0)">Mi amorcito</button>
@@ -114,7 +114,7 @@
               <button onclick="nextQuestion(10)">Mi chiquitita</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cual es mi juego favorito de todos los tiempos?</p>
+              <p>¿Cuál es mi juego favorito de todos los tiempos?</p>
               <img src="assets/img/juego.gif" width="200">
               <br>
               <button onclick="nextQuestion(10)">The Last of Us</button>
@@ -132,7 +132,7 @@
               <button onclick="nextQuestion(0)">En vuestra casa</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cúal viaje contigo fue mi favorito?</p>
+              <p>¿Cuál viaje contigo fue mi favorito?</p>
               <img src="assets/img/viaje favorito.gif" width="200">
               <br>
               <button onclick="nextQuestion(10)">Ámsterdam</button>
@@ -147,7 +147,7 @@
               <button onclick="nextQuestion(0)">Simba</button>
               <button onclick="nextQuestion(0)">Justin</button>
             </div>
-            <div class="question" id="result">
+            <div class="question" id="result" style="display:none;">
                 <h2>¡Resultados!</h2>
                 <p id="message"></p>
                 <img id="result-image" class="center" style="display:none;" width="200">
@@ -165,7 +165,7 @@
             questions[currentQuestion].classList.remove("active");
             currentQuestion++;
             
-            if (currentQuestion < questions.length - 1)
+            if (currentQuestion < questions.length)
                 questions[currentQuestion].classList.add("active");
             else
                 showResults();
