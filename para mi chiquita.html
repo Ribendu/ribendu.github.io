@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #8E44AD, #3498DB);
+            color: white;
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #quiz-container {
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #FFD700;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .question {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            margin: 20px auto;
+            font-size: 1.4em;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+        }
+        img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.2em;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #ff4757;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>¿Cuánto me conoces?</h1>
+        <div id="quiz">
+            <div class="question active" data-points="10">
+                <p>¿Cuál es mi comida favorita?</p>
+                <img src="assets/img/comida.gif" width="200">
+                <br>
+                <button onclick="nextQuestion(0)">Pizza</button>
+                <button onclick="nextQuestion(0)">Sushi</button>
+                <button onclick="nextQuestion(10)">Hamburguesa</button>
+                <button onclick="nextQuestion(0)">Kebab</button>
+            </div>
+            <div class="question" data-points="10">
+                <p>¿Dónde fue nuestra primera cita?</p>
+                <img src="assets/img/cita.jpg" width="200">
+                <br>
+                <button onclick="nextQuestion(10)">En el bar Orient Express</button>
+                <button onclick="nextQuestion(0)">En el shopping Glories</button>
+            </div>
+            <div class="question" data-points="10">
+              <p>¿Si pudiera viajar a cualquier lugar, a dónde iría?</p>
+              <img src="assets/img/viaje.jfif" width="200">
+              <br>
+              <button onclick="nextQuestion(0)">Canadá</button>
+              <button onclick="nextQuestion(0)">Corea</button>
+              <button onclick="nextQuestion(10)">Japón</button>
+              <button onclick="nextQuestion(0)">Grecia</button>
+            </div>
+            <div class="question" data-points="10">
+              <p>¿Cual mi apodo favorito para ti?</p>
+              <img src="assets/img/apodo.jfif" width="200">
+              <br>
+              <button onclick="nextQuestion(0)">Mi amorcito</button>
+              <button onclick="nextQuestion(0)">Mi pequeñita</button>
+              <button onclick="nextQuestion(0)">Cami</button>
+              <button onclick="nextQuestion(10)">Mi chiquitita</button>
+            </div>
+            <div class="question" data-points="10">
+              <p>¿Cual es mi juego favorito de todos los tiempos?</p>
+              <img src="assets/img/juego.gif" width="200">
+              <br>
+              <button onclick="nextQuestion(10)">The Last of Us</button>
+              <button onclick="nextQuestion(0)">Minecraft</button>
+              <button onclick="nextQuestion(0)">League of Legends</button>
+              <button onclick="nextQuestion(0)">God of War</button>
+            </div>
+            <div class="question" data-points="10">
+              <p>¿Cúando fue nuestro primero beso?</p>
+              <img src="assets/img/beso.png" width="200">
+              <br>
+              <button onclick="nextQuestion(0)">Durante nuestra cita en el bar</button>
+              <button onclick="nextQuestion(0)">Durante nuestra cita en el Glories</button>
+              <button onclick="nextQuestion(10)">Antes de que yo suba en el bus</button>
+              <button onclick="nextQuestion(0)">En vuestra casa</button>
+            </div>
+            <div class="question" data-points="10">
+              <p>¿Cúal viaje contigo fue mi favorito?</p>
+              <img src="assets/img/viaje favorito.gif" width="200">
+              <br>
+              <button onclick="nextQuestion(10)">Ámsterdam</button>
+              <button onclick="nextQuestion(0)">Milán</button>
+            </div>
+            <div class="question" data-points="10">
+              <p>¿Cómo se llamaba mi primer mascota?</p>
+              <img src="assets/img/mascota.gif" width="200">
+              <br>
+              <button onclick="nextQuestion(0)">Preta</button>
+              <button onclick="nextQuestion(10)">Lea</button>
+              <button onclick="nextQuestion(0)">Simba</button>
+              <button onclick="nextQuestion(0)">Justin</button>
+            </div>
+            <div class="question" id="result">
+                <h2>¡Resultados!</h2>
+                <p id="message"></p>
+                <img id="result-image" class="center" style="display:none;" width="200">
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentQuestion = 0;
+        let score = 0;
+        const questions = document.querySelectorAll(".question");
+        
+        function nextQuestion(points) {
+            score += points;
+            questions[currentQuestion].classList.remove("active");
+            currentQuestion++;
+            
+            if (currentQuestion < questions.length - 1)
+                questions[currentQuestion].classList.add("active");
+            else
+                showResults();
+        }
+        
+        function showResults() {
+            let message = "";
+            let imageUrl = "";
+            if (score === 80) {
+                message = "¡Eres la mejor! Me conoces perfecto, te amo muchísimo mi amor ❤️";
+                imageUrl = "assets/img/love.gif";
+            } else if (score >= 40) {
+                message = "Que bien mi amorcito, pero puedes ir mejor! 😁";
+                imageUrl = "assets/img/animo.gif";
+            } else {
+                message = "Está bien, pero pensaba que me conocías más 😢";
+                imageUrl = "assets/img/triste.gif";
+            }
+            document.getElementById("message").innerText = message;
+            const resultImage = document.getElementById("result-image");
+            resultImage.src = imageUrl;
+            resultImage.style.display = "block";
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
