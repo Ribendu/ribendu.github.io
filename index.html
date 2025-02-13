@@ -9,7 +9,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            background: url("/assets/img/flower_background.jpg") repeat;
+            background: url("assets/img/flower_background.jpg") repeat;
             color: white;
             margin: 0;
             padding: 50px 20px;
@@ -123,7 +123,7 @@
               <button onclick="nextQuestion(0)">God of War</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cúando fue nuestro primero beso?</p>
+              <p>¿Cuándo fue nuestro primer beso?</p>
               <img src="assets/img/beso.png" width="200">
               <br>
               <button onclick="nextQuestion(0)">Durante nuestra cita en el bar</button>
@@ -186,10 +186,10 @@
                 imageUrl = "assets/img/triste.gif";
             }
             document.getElementById("message").innerText = message;
+            document.getElementById("result").style.display = "block";
             const resultImage = document.getElementById("result-image");
             resultImage.src = imageUrl;
             resultImage.style.display = "block";
-            document.getElementById("result").style.display = "block";
         }
 
         function launchConfetti() {
