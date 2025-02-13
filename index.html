@@ -105,7 +105,7 @@
               <button onclick="nextQuestion(0)">Grecia</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cuál mi apodo favorito para ti?</p>
+              <p>¿Cual mi apodo favorito para ti?</p>
               <img src="assets/img/apodo.jfif" width="200">
               <br>
               <button onclick="nextQuestion(0)">Mi amorcito</button>
@@ -114,7 +114,7 @@
               <button onclick="nextQuestion(10)">Mi chiquitita</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cuál es mi juego favorito de todos los tiempos?</p>
+              <p>¿Cual es mi juego favorito de todos los tiempos?</p>
               <img src="assets/img/juego.gif" width="200">
               <br>
               <button onclick="nextQuestion(10)">The Last of Us</button>
@@ -132,7 +132,7 @@
               <button onclick="nextQuestion(0)">En vuestra casa</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cuál viaje contigo fue mi favorito?</p>
+              <p>¿Cúal viaje contigo fue mi favorito?</p>
               <img src="assets/img/viaje favorito.gif" width="200">
               <br>
               <button onclick="nextQuestion(10)">Ámsterdam</button>
@@ -147,14 +147,13 @@
               <button onclick="nextQuestion(0)">Simba</button>
               <button onclick="nextQuestion(0)">Justin</button>
             </div>
-            <div class="question" id="result" style="display:none;">
+            <div class="question" id="result">
                 <h2>¡Resultados!</h2>
                 <p id="message"></p>
                 <img id="result-image" class="center" style="display:none;" width="200">
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
         let currentQuestion = 0;
         let score = 0;
@@ -165,42 +164,31 @@
             questions[currentQuestion].classList.remove("active");
             currentQuestion++;
             
-            if (currentQuestion < questions.length) {
+            if (currentQuestion < questions.length - 1)
                 questions[currentQuestion].classList.add("active");
-            } else {
+            else
                 showResults();
-            }
         }
         
         function showResults() {
             let message = "";
-            let image = "";
+            let imageUrl = "";
             if (score === 80) {
-                message = "¡Eres la mejor! Ganarás una sorpresa 🎁, te amo muchísimo mi amor ❤️";
-                image = "assets/img/love.gif";
-                launchConfetti();
+                message = "¡Eres la mejor! Me conoces perfecto, te amo muchísimo mi amor ❤️";
+                imageUrl = "assets/img/love.gif";
             } else if (score >= 40) {
                 message = "Que bien mi amorcito, pero puedes ir mejor! 😁";
-                image = "assets/img/animo.gif";
+                imageUrl = "assets/img/animo.gif";
             } else {
                 message = "Está bien, pero pensaba que me conocías más 😢";
-                image = "assets/img/triste.gif";
+                imageUrl = "assets/img/triste.gif";
             }
             document.getElementById("message").innerText = message;
             const resultImage = document.getElementById("result-image");
-            resultImage.src = image;
+            resultImage.src = imageUrl;
             resultImage.style.display = "block";
             document.getElementById("result").style.display = "block";
         }
-
-        function launchConfetti() {
-            confetti({
-                particleCount: 200,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        }
-
     </script>
 </body>
 </html>
