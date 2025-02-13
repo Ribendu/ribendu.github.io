@@ -174,21 +174,21 @@
         
         function showResults() {
             let message = "";
-            let imageUrl = "";
+            let image = "";
             if (score === 80) {
                 message = "¡Eres la mejor! Ganarás una sorpresa 🎁, te amo muchísimo mi amor ❤️";
-                imageUrl = "assets/img/love.gif";
+                image = "assets/img/love.gif";
                 launchConfetti();
             } else if (score >= 40) {
                 message = "Que bien mi amorcito, pero puedes ir mejor! 😁";
-                imageUrl = "assets/img/animo.gif";
+                image = "assets/img/animo.gif";
             } else {
                 message = "Está bien, pero pensaba que me conocías más 😢";
-                imageUrl = "assets/img/triste.gif";
+                image = "assets/img/triste.gif";
             }
             document.getElementById("message").innerText = message;
             const resultImage = document.getElementById("result-image");
-            resultImage.src = imageUrl;
+            resultImage.src = image;
             resultImage.style.display = "block";
             document.getElementById("result").style.display = "block";
         }
