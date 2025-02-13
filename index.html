@@ -121,172 +121,204 @@
         #menu img {
             margin-top: 20px; 
         }
+        #timer {
+            font-size: 1.2em;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
     </style>
 </head>
 <body>
     <div id="menu">
-        <h1>Bienvenida mi amorcito ❤️</h1>
-        <img src="assets/img/menu.jfif" width="250">
-        <br>
-        <button onclick="startGame()">Jugar</button>
+      <h1>Bienvenida mi amorcito ❤️</h1>
+      <img src="assets/img/menu.jfif" width="250">
+      <br>
+      <button onclick="startGame()">Jugar</button>
     </div>
     <div id="quiz-container" style="display: none;">
-        <h1>¿Cuánto me conoces?</h1>
-        <div id="quiz">
-            <div class="question active" data-points="10">
-                <p>¿Cuál es mi comida favorita?</p>
-                <img src="assets/img/comida.gif" width="200">
-                <br>
-                <button onclick="nextQuestion(0)">Pizza</button>
-                <button onclick="nextQuestion(0)">Sushi</button>
-                <button onclick="nextQuestion(10)">Hamburguesa</button>
-                <button onclick="nextQuestion(0)">Kebab</button>
-            </div>
-            <div class="question" data-points="10">
-                <p>¿Dónde fue nuestra primera cita?</p>
-                <img src="assets/img/cita.jpg" width="200">
-                <br>
-                <button onclick="nextQuestion(10)">En el bar Orient Express</button>
-                <button onclick="nextQuestion(0)">En el shopping Glories</button>
-            </div>
-            <div class="question" data-points="10">
-              <p>¿Si pudiera viajar a cualquier lugar, a dónde iría?</p>
-              <img src="assets/img/viaje.jfif" width="200">
-              <br>
-              <button onclick="nextQuestion(0)">Canadá</button>
-              <button onclick="nextQuestion(0)">Corea</button>
-              <button onclick="nextQuestion(10)">Japón</button>
-              <button onclick="nextQuestion(0)">Grecia</button>
-            </div>
-            <div class="question" data-points="10">
-              <p>¿Cual mi apodo favorito para ti?</p>
-              <img src="assets/img/apodo.jfif" width="200">
-              <br>
-              <button onclick="nextQuestion(0)">Mi amorcito</button>
-              <button onclick="nextQuestion(0)">Mi pequeñita</button>
-              <button onclick="nextQuestion(0)">Cami</button>
-              <button onclick="nextQuestion(10)">Mi chiquitita</button>
-            </div>
-            <div class="question" data-points="10">
-              <p>¿Cual es mi juego favorito de todos los tiempos?</p>
-              <img src="assets/img/juego.gif" width="200">
-              <br>
-              <button onclick="nextQuestion(10)">The Last of Us</button>
-              <button onclick="nextQuestion(0)">Minecraft</button>
-              <button onclick="nextQuestion(0)">League of Legends</button>
-              <button onclick="nextQuestion(0)">God of War</button>
-            </div>
-            <div class="question" data-points="10">
-              <p>¿Cúando fue nuestro primero beso?</p>
-              <img src="assets/img/beso.png" width="200">
-              <br>
-              <button onclick="nextQuestion(0)">Durante nuestra cita en el bar</button>
-              <button onclick="nextQuestion(0)">Durante nuestra cita en el Glories</button>
-              <button onclick="nextQuestion(10)">Antes de que yo suba en el bus</button>
-              <button onclick="nextQuestion(0)">En vuestra casa</button>
-            </div>
-            <div class="question" data-points="10">
-              <p>¿Cúal viaje contigo fue mi favorito?</p>
-              <img src="assets/img/viaje favorito.gif" width="200">
-              <br>
-              <button onclick="nextQuestion(10)">Ámsterdam</button>
-              <button onclick="nextQuestion(0)">Milán</button>
-            </div>
-            <div class="question" data-points="10">
-              <p>¿Cómo se llamaba mi primer mascota?</p>
-              <img src="assets/img/mascota.gif" width="200">
-              <br>
-              <button onclick="nextQuestion(0)">Preta</button>
-              <button onclick="nextQuestion(10)">Lea</button>
-              <button onclick="nextQuestion(0)">Simba</button>
-              <button onclick="nextQuestion(0)">Justin</button>
-            </div>
-            <div class="question" id="result">
-                <h2>¡Resultados!</h2>
-                <p id="message"></p>
-                <img id="result-image" class="center" style="display:none;" width="200">
-            </div>
+      <h1>¿Cuánto me conoces?</h1>
+      <div id="timer">Tiempo restante: <span id="time-left">60</span> segundos</div>
+      <div id="quiz">
+        <div class="question active" data-points="10">
+          <p>¿Cuál es mi comida favorita?</p>
+          <img src="assets/img/comida.gif" width="200">
+          <br>
+          <button onclick="nextQuestion(0)">Pizza</button>
+          <button onclick="nextQuestion(0)">Sushi</button>
+          <button onclick="nextQuestion(10)">Hamburguesa</button>
+          <button onclick="nextQuestion(0)">Kebab</button>
         </div>
+        <div class="question" data-points="10">
+          <p>¿Dónde fue nuestra primera cita?</p>
+          <img src="assets/img/cita.jpg" width="200">
+          <br>
+          <button onclick="nextQuestion(10)">En el bar Orient Express</button>
+          <button onclick="nextQuestion(0)">En el shopping Glories</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Si pudiera viajar a cualquier lugar, a dónde iría?</p>
+          <img src="assets/img/viaje.jfif" width="200">
+          <br>
+          <button onclick="nextQuestion(0)">Canadá</button>
+          <button onclick="nextQuestion(0)">Corea</button>
+          <button onclick="nextQuestion(10)">Japón</button>
+          <button onclick="nextQuestion(0)">Grecia</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Cual mi apodo favorito para ti?</p>
+          <img src="assets/img/apodo.jfif" width="200">
+          <br>
+          <button onclick="nextQuestion(0)">Mi amorcito</button>
+          <button onclick="nextQuestion(0)">Mi pequeñita</button>
+          <button onclick="nextQuestion(0)">Cami</button>
+          <button onclick="nextQuestion(10)">Mi chiquitita</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Cual es mi juego favorito de todos los tiempos?</p>
+          <img src="assets/img/juego.gif" width="200">
+          <br>
+          <button onclick="nextQuestion(10)">The Last of Us</button>
+          <button onclick="nextQuestion(0)">Minecraft</button>
+          <button onclick="nextQuestion(0)">League of Legends</button>
+          <button onclick="nextQuestion(0)">God of War</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Cúando fue nuestro primero beso?</p>
+          <img src="assets/img/beso.png" width="200">
+          <br>
+          <button onclick="nextQuestion(0)">Durante nuestra cita en el bar</button>
+          <button onclick="nextQuestion(0)">Durante nuestra cita en el Glories</button>
+          <button onclick="nextQuestion(10)">Antes de que yo suba en el bus</button>
+          <button onclick="nextQuestion(0)">En vuestra casa</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Cúal viaje contigo fue mi favorito?</p>
+          <img src="assets/img/viaje favorito.gif" width="200">
+          <br>
+          <button onclick="nextQuestion(10)">Ámsterdam</button>
+          <button onclick="nextQuestion(0)">Milán</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Cómo se llamaba mi primer mascota?</p>
+          <img src="assets/img/mascota.gif" width="200">
+          <br>
+          <button onclick="nextQuestion(0)">Preta</button>
+          <button onclick="nextQuestion(10)">Lea</button>
+          <button onclick="nextQuestion(0)">Simba</button>
+          <button onclick="nextQuestion(0)">Justin</button>
+        </div>
+        <div class="question" id="result">
+          <h2>¡Resultados!</h2>
+          <p id="message"></p>
+          <img id="result-image" class="center" style="display:none;" width="200">
+        </div>
+      </div>
     </div>
     <audio id="correctSound" src="assets/sound/correct.wav" preload="auto"></audio>
     <audio id="wrongSound" src="assets/sound/failure.wav" preload="auto"></audio>
     <script>
-        let currentQuestion = 0;
-        let score = 0;
-        const questions = document.querySelectorAll(".question");
-        function startGame() {
-            document.getElementById("menu").style.display = "none";
-            document.getElementById("quiz-container").style.display = "block";
-
-            const backgroundMusic = document.getElementById("backgroundMusic");
-            backgroundMusic.play().catch(() => {
-                document.addEventListener("click", () => backgroundMusic.play(), { once: true });
-            });
-        }
-        function nextQuestion(points) {
-            const correctSound = document.getElementById("correctSound");
-            const wrongSound = document.getElementById("wrongSound");
-            if (points > 0) {
-                correctSound.currentTime = 0;
-                correctSound.play();
-            } else {
-                wrongSound.currentTime = 0;
-                wrongSound.play();
-            }
-            score += points;
-            questions[currentQuestion].classList.remove("active");
-            currentQuestion++;
-            
-            if (currentQuestion < questions.length - 1)
-                questions[currentQuestion].classList.add("active");
-            else
-                showResults();
-        }
-        
-        function showResults() {
-            let message = "";
-            let imageUrl = "";
-            if (score === 80) {
-                message = "¡Eres la mejor! Te amo muchísimo mi amor ❤️, ganarás una sorpresa 🎁";
-                imageUrl = "assets/img/love.gif";
-            } else if (score >= 40) {
-                message = "Que bien mi amorcito, pero puedes ir mejor! 😁";
-                imageUrl = "assets/img/animo.gif";
-            } else {
-                message = "Está bien, pero pensaba que me conocías más 😢";
-                imageUrl = "assets/img/triste.gif";
-            }
-            document.getElementById("message").innerText = message;
-            const resultImage = document.getElementById("result-image");
-            resultImage.src = imageUrl;
-            resultImage.style.display = "block";
-            document.getElementById("result").style.display = "block";
-        }
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.style.left = Math.random() * 100 + "vw";
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
-        }
-        setInterval(createHeart, 350);
-        function confettiEffect() {
-            for (let i = 0; i < 100; i++) {
-                setTimeout(createHeart, i * 50);
-            }
-        }
-        document.addEventListener("DOMContentLoaded", function () {
-            const backgroundMusic = document.getElementById("backgroundMusic");
-            backgroundMusic.volume = 0.5;
-            const playMusic = () => {
-                backgroundMusic.play().then(() => {
-                    document.removeEventListener("click", playMusic);
-                }).catch(() => {
-                    document.addEventListener("click", playMusic);
-                });
-            };
-            playMusic();
+      let currentQuestion = 0;
+      let score = 0;
+      const questions = document.querySelectorAll(".question");
+      let timeLeft = 60;
+      let timerInterval;
+  
+      function startGame() {
+        document.getElementById("menu").style.display = "none";
+        document.getElementById("quiz-container").style.display = "block";
+        startTimer();
+  
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        backgroundMusic.play().catch(() => {
+          document.addEventListener("click", () => backgroundMusic.play(), { once: true });
         });
+      }
+  
+      function nextQuestion(points) {
+        const correctSound = document.getElementById("correctSound");
+        const wrongSound = document.getElementById("wrongSound");
+        if (points > 0) {
+          correctSound.currentTime = 0;
+          correctSound.play();
+        } else {
+          wrongSound.currentTime = 0;
+          wrongSound.play();
+        }
+        score += points;
+        questions[currentQuestion].classList.remove("active");
+        currentQuestion++;
+  
+        if (currentQuestion < questions.length - 1) {
+          questions[currentQuestion].classList.add("active");
+          timeLeft = 60;
+          clearInterval(timerInterval);
+          startTimer();
+        } else {
+          clearInterval(timerInterval);
+          showResults();
+        }
+      }
+  
+      function showResults() {
+        let message = "";
+        let imageUrl = "";
+        document.getElementById("timer").style.display = "none";
+        if (score === 80) {
+            message = "¡Eres la mejor! Te amo muchísimo mi amor ❤️, ganarás una sorpresa 🎁";
+            imageUrl = "assets/img/love.gif";
+        } else if (score >= 40) {
+            message = "Que bien mi amorcito, pero puedes ir mejor! 😁";
+            imageUrl = "assets/img/animo.gif";
+        } else {
+            message = "Está bien, pero pensaba que me conocías más 😢";
+            imageUrl = "assets/img/triste.gif";
+        }
+        document.getElementById("message").innerText = message;
+        const resultImage = document.getElementById("result-image");
+        resultImage.src = imageUrl;
+        resultImage.style.display = "block";
+        document.getElementById("result").style.display = "block";
+      }
+  
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+      setInterval(createHeart, 350);
+  
+      function confettiEffect() {
+        for (let i = 0; i < 100; i++) {
+          setTimeout(createHeart, i * 50);
+        }
+      }
+  
+      function startTimer() {
+        timerInterval = setInterval(() => {
+          timeLeft--;
+          document.getElementById("time-left").innerText = timeLeft;
+          if (timeLeft === 0) {
+            clearInterval(timerInterval);
+            nextQuestion(0);
+          }
+        }, 1000);
+      }
+  
+      document.addEventListener("DOMContentLoaded", function() {
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        backgroundMusic.volume = 0.5;
+        const playMusic = () => {
+          backgroundMusic.play().then(() => {
+            document.removeEventListener("click", playMusic);
+          }).catch(() => {
+            document.addEventListener("click", playMusic);
+          });
+        };
+        playMusic();
+      });
     </script>
-</body>
-</html>
+  </body>
+  </html>
