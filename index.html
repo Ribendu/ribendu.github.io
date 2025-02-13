@@ -24,7 +24,7 @@
         }
         h1 {
             font-size: 2.5em;
-            color: #300423;
+            color: #FFD700;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
         .question {
@@ -81,7 +81,7 @@
         <div id="quiz">
             <div class="question active" data-points="10">
                 <p>¿Cuál es mi comida favorita?</p>
-                <img src="assets/img/comida.gif" width="200" alt="Comida" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+                <img src="assets/img/comida.gif" width="200">
                 <br>
                 <button onclick="nextQuestion(0)">Pizza</button>
                 <button onclick="nextQuestion(0)">Sushi</button>
@@ -90,14 +90,14 @@
             </div>
             <div class="question" data-points="10">
                 <p>¿Dónde fue nuestra primera cita?</p>
-                <img src="assets/img/cita.jpg" width="200" alt="Cita" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+                <img src="assets/img/cita.jpg" width="200">
                 <br>
                 <button onclick="nextQuestion(10)">En el bar Orient Express</button>
                 <button onclick="nextQuestion(0)">En el shopping Glories</button>
             </div>
             <div class="question" data-points="10">
               <p>¿Si pudiera viajar a cualquier lugar, a dónde iría?</p>
-              <img src="assets/img/viaje.jfif" width="200" alt="Viaje" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+              <img src="assets/img/viaje.jfif" width="200">
               <br>
               <button onclick="nextQuestion(0)">Canadá</button>
               <button onclick="nextQuestion(0)">Corea</button>
@@ -106,7 +106,7 @@
             </div>
             <div class="question" data-points="10">
               <p>¿Cuál mi apodo favorito para ti?</p>
-              <img src="assets/img/apodo.jfif" width="200" alt="Apodo" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+              <img src="assets/img/apodo.jfif" width="200">
               <br>
               <button onclick="nextQuestion(0)">Mi amorcito</button>
               <button onclick="nextQuestion(0)">Mi pequeñita</button>
@@ -115,7 +115,7 @@
             </div>
             <div class="question" data-points="10">
               <p>¿Cuál es mi juego favorito de todos los tiempos?</p>
-              <img src="assets/img/juego.gif" width="200" alt="Juego" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+              <img src="assets/img/juego.gif" width="200">
               <br>
               <button onclick="nextQuestion(10)">The Last of Us</button>
               <button onclick="nextQuestion(0)">Minecraft</button>
@@ -123,8 +123,8 @@
               <button onclick="nextQuestion(0)">God of War</button>
             </div>
             <div class="question" data-points="10">
-              <p>¿Cuándo fue nuestro primer beso?</p>
-              <img src="assets/img/beso.png" width="200" alt="Beso" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+              <p>¿Cúando fue nuestro primero beso?</p>
+              <img src="assets/img/beso.png" width="200">
               <br>
               <button onclick="nextQuestion(0)">Durante nuestra cita en el bar</button>
               <button onclick="nextQuestion(0)">Durante nuestra cita en el Glories</button>
@@ -133,14 +133,14 @@
             </div>
             <div class="question" data-points="10">
               <p>¿Cuál viaje contigo fue mi favorito?</p>
-              <img src="assets/img/viaje favorito.gif" width="200" alt="Viaje Favorito" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+              <img src="assets/img/viaje favorito.gif" width="200">
               <br>
               <button onclick="nextQuestion(10)">Ámsterdam</button>
               <button onclick="nextQuestion(0)">Milán</button>
             </div>
             <div class="question" data-points="10">
               <p>¿Cómo se llamaba mi primer mascota?</p>
-              <img src="assets/img/mascota.gif" width="200" alt="Mascota" onerror="this.onerror=null; this.src='assets/img/placeholder.png';">
+              <img src="assets/img/mascota.gif" width="200">
               <br>
               <button onclick="nextQuestion(0)">Preta</button>
               <button onclick="nextQuestion(10)">Lea</button>
@@ -186,10 +186,10 @@
                 imageUrl = "assets/img/triste.gif";
             }
             document.getElementById("message").innerText = message;
-            document.getElementById("result").classList.add("active");
             const resultImage = document.getElementById("result-image");
             resultImage.src = imageUrl;
             resultImage.style.display = "block";
+            document.getElementById("result").style.display = "block";
         }
 
         function launchConfetti() {
