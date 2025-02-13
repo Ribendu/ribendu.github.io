@@ -186,7 +186,7 @@
                 imageUrl = "assets/img/triste.gif";
             }
             document.getElementById("message").innerText = message;
-            document.getElementById("result").style.display = "block";
+            document.getElementById("result").classList.add("active");
             const resultImage = document.getElementById("result-image");
             resultImage.src = imageUrl;
             resultImage.style.display = "block";
