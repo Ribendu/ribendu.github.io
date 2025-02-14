@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Interactivo</title>
+    <title>Sorpresita para vos mi chiquita</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <audio id="backgroundMusic" src="assets/sound/background_music.mp3" preload="auto" loop></audio>
     <style>
@@ -156,6 +156,15 @@
           <button onclick="nextQuestion(0)">En el shopping Glories</button>
         </div>
         <div class="question" data-points="10">
+          <p>¿Qué tipo de película prefiero ver acurrucados en el sofá?</p>
+          <img src="assets/img/cuddling.jpg" width="200">
+          <br>
+          <button onclick="nextQuestion(10)">Terror</button>
+          <button onclick="nextQuestion(0)">Comédia</button>
+          <button onclick="nextQuestion(0)">Acción</button>
+          <button onclick="nextQuestion(0)">Ficción Científica</button>
+        </div>
+        <div class="question" data-points="10">
           <p>¿Si pudiera viajar a cualquier lugar, a dónde iría?</p>
           <img src="assets/img/viaje.jfif" width="200">
           <br>
@@ -172,6 +181,15 @@
           <button onclick="nextQuestion(0)">Mi pequeñita</button>
           <button onclick="nextQuestion(0)">Cami</button>
           <button onclick="nextQuestion(10)">Mi chiquitita</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Dónde y cuándo nos dijimos 'te amo' por primera vez?</p>
+          <img src="assets/img/love.jfif" width="200">
+          <br>
+          <button onclick="nextQuestion(0)">En el hotel en que pasaríamos la noche juntos</button>
+          <button onclick="nextQuestion(10)">En casa en nuestra habitación</button>
+          <button onclick="nextQuestion(0)">En un restaurante</button>
+          <button onclick="nextQuestion(0)">Durante una cita en el Maquinista</button>
         </div>
         <div class="question" data-points="10">
           <p>¿Cual es mi juego favorito de todos los tiempos?</p>
@@ -192,6 +210,15 @@
           <button onclick="nextQuestion(0)">En vuestra casa</button>
         </div>
         <div class="question" data-points="10">
+          <p>¿Cuál fue el primer regalo que te hice?</p>
+          <img src="assets/img/gift.jpeg" width="200">
+          <br>
+          <button onclick="nextQuestion(0)">Pendientes de diamantes</button>
+          <button onclick="nextQuestion(10)">El anillo con piedra preciosa</button>
+          <button onclick="nextQuestion(0)">Un poema y los pendientes de diamantes</button>
+          <button onclick="nextQuestion(0)">Un poema</button>
+        </div>
+        <div class="question" data-points="10">
           <p>¿Cúal viaje contigo fue mi favorito?</p>
           <img src="assets/img/viaje favorito.gif" width="200">
           <br>
@@ -206,6 +233,15 @@
           <button onclick="nextQuestion(10)">Lea</button>
           <button onclick="nextQuestion(0)">Simba</button>
           <button onclick="nextQuestion(0)">Justin</button>
+        </div>
+        <div class="question" data-points="10">
+          <p>¿Cuál día fue nuestra primera cita?</p>
+          <img src="assets/img/romantic_date.png" width="200">
+          <br>
+          <button onclick="nextQuestion(10)">3 de Noviembre</button>
+          <button onclick="nextQuestion(0)">11 de Noviembre</button>
+          <button onclick="nextQuestion(0)">13 de Noviembre</button>
+          <button onclick="nextQuestion(0)">27 de Octubre</button>
         </div>
         <div class="question" id="result">
           <h2>¡Resultados!</h2>
@@ -263,10 +299,10 @@
         let message = "";
         let imageUrl = "";
         document.getElementById("timer").style.display = "none";
-        if (score === 80) {
-            message = "¡Eres la mejor! Te amo muchísimo mi amor ❤️, ganarás una sorpresa 🎁";
+        if (score >= 100) {
+            message = "¡Eres la mejor! Te amo muchísimo mi amor ❤️, Preparé esto con mucha ilusión, espero que te guste, mi chiquitita 🎁";
             imageUrl = "assets/img/love.gif";
-        } else if (score >= 40) {
+        } else if (score >= 80) {
             message = "Que bien mi amorcito, pero puedes ir mejor! 😁";
             imageUrl = "assets/img/animo.gif";
         } else {
